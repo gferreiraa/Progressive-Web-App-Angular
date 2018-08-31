@@ -1,0 +1,25 @@
+{
+  "name": "progressive-web-app-angular",
+  "version": "1.0.0",
+  "description": "Projeto foi desenvolvido durante o curso Semana do Angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gferreiraa/Progressive-Web-App-Angular.git"
+  },
+  "keywords": [
+    "PWA",
+    "Angular",
+    "Typescript",
+    "Javascript"
+  ],
+  "author": "Getulio Rafael Ferreira <gferreiraa@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gferreiraa/Progressive-Web-App-Angular/issues"
+  },
+  "homepage": "https://github.com/gferreiraa/Progressive-Web-App-Angular#readme"
+}
