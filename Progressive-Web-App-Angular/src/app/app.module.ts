@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 //modulos
 import { RoutingModule } from './app.router';
 
+//Providers
+import { MenuService } from './providers/menu.service';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LogoComponent } from './components/logo/logo.component';
@@ -38,7 +41,7 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
     BrowserModule,
     RoutingModule
   ],
-  providers: [],
+  providers: [MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

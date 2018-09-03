@@ -4,13 +4,13 @@
         <a class="navbar-item" href="#">
           <app-logo></app-logo>
         </a>
-        <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+        <div class="navbar-burger burger" (click)="menu.open()">
           <span></span>
           <span></span>
           <span></span>
         </div>
       </div>
-      <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-menu">
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="field is-grouped">
