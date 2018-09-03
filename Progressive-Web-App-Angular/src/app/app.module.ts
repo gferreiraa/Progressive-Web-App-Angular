@@ -6,6 +6,7 @@ import { RoutingModule } from './app.router';
 
 //Providers
 import { MenuService } from './providers/menu.service';
+import { ProductsService } from './providers/products.service';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -41,7 +42,7 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
     BrowserModule,
     RoutingModule
   ],
-  providers: [MenuService],
+  providers: [MenuService, ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
