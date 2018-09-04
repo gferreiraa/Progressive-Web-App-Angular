@@ -1,35 +1,31 @@
 import { Injectable } from '@angular/core';
 import * as $ from 'jquery';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class MenuService {
   opened: boolean = false;
   options: any[] = [
     {
       icon: 'fa fa-home',
       text: 'Home',
-      route: '/'
+      router: '/'
     },
     {
       icon: 'fa fa-gamepad',
       text: 'Produtos',
-      route: '/products'
+      router: '/products'
     }
   ]
+
   constructor() { }
 
   open() {
     this.opened = true;
+    this.fix();
   }
 
   close() {
     this.opened = false;
-  //   $("section.outer").click(function(){
-  //     $("section.outer").removeClass('animated slideInLeft').addClass('animated slideInRight');
-  // });
-
   }
 
   fix() {

@@ -24,6 +24,7 @@ import { BannerComponent } from './components/banner/banner.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProductsPageComponent } from './pages/products-page/products-page.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
     BannerComponent,
     HomePageComponent,
     ProductsPageComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    ProductPageComponent
   ],
   imports: [
     BrowserModule,

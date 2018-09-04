@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StorageService } from './providers/storage.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'PWA: Progressive-Web-App-Angular';
+  constructor(public storage: StorageService) {
+    storage.setDrive('local'); // session ou local
+  }
 }

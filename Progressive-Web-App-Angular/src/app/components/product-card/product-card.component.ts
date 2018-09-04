@@ -16,8 +16,8 @@ import { CartService } from '../../providers/cart.service';
 // exportando a classe deste componente para ser importável por outros arquivos (no caso, o app.module.ts)
 export class ProductCardComponent implements OnInit {
   // declarando uma váriavel objeto do tipo any que irá armazenar o produto assim que for resolvido pelo provider mais a frente
-  @Input() product: any = {};
-  @Input() view: boolean = false;
+  @Input() product: any = {}; // inputa o produto de cima pra baixo
+  @Input() view: boolean = false; // para saber se estamos na pagina interna do produto
 
   constructor(
     // instanciando nossos providers
@@ -28,18 +28,18 @@ export class ProductCardComponent implements OnInit {
   }
 
   ngOnInit() {
-    // setTimeout(() => {
-    //   // scroll to top
-    //   this.products.scrollTop();
-    // }, 0)
+    setTimeout(() => {
+      // scroll to top
+      this.products.scrollTop();
+    }, 0)
 
   }
 
   // adiciona ao carrinho
-  // addToCart(item: any) {
-  //   this.cart.add(item).then(() => {
-  //     console.info(item.name + ' adicionado/atualizado no carrinho');
-  //   }).catch(console.warn)
-  // }
+  addToCart(item: any) {
+    this.cart.add(item).then(() => {
+      console.info(item.name + ' adicionado/atualizado no carrinho');
+    }).catch(console.warn)
+  }
 
 }

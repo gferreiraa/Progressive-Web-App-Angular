@@ -1,32 +1,40 @@
 import { Injectable } from '@angular/core';
 
 const products = require('./products.json');
-let BaseURL = window.location.href;
-BaseURL =  BaseURL.substring(0, BaseURL.length-1);
-
+const BASEURL = window.location.href;
 import * as _ from 'lodash';
 import * as $ from 'jquery';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ProductsService {
 
-  constructor() { }
+  constructor() {
+  }
 
-  list(){
+  // retorna a lista de produtos
+  list() {
     return new Promise((resolve, reject) => {
-
       products.map((product, i) => {
-        //titulo no-formato-de-slug
+        // título no-formato-de-slug
         products[i].titleSlug = _.kebabCase(product.name);
-        //a rota deste post
+        // a rota deste post
         products[i].router = '/products/' + products[i].titleSlug + '/' + products[i].id;
-        //a URL deste post
-        products[i].url = BaseURL + products[i].router;
+        // a url deste post
+        products[i].url = BASEURL + products[i].router;
       });
-      resolve(products); //Resolve a lista de posts
+      resolve(products); // resolve a lista de posts
+    })
+  }
 
+  view(id: any) {
+    return new Promise((resolve, reject) => {
+      this.list().then((products: any[]) => {
+        let product = _.find(products, (p) => {
+          return p.id == id;
+        });
+        // se tiver post resolve, senão rejeita
+        return product ? resolve(product) : reject('product not found');
+      });
     })
   }
 
@@ -49,9 +57,5 @@ export class ProductsService {
       scrollTop: 0
     }, 0);
   }
-
-
-
-
 
 }
