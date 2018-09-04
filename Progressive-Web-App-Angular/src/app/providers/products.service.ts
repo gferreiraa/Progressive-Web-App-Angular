@@ -29,4 +29,29 @@ export class ProductsService {
 
     })
   }
+
+  search(keyword: string) {
+    return new Promise((resolve, reject) => {
+      this.list().then((products: any[]) => {
+        let items: any[];
+        if (products.length) {
+          items = _.filter(products, (p) => {
+            return p.name.toLocaleLowerCase().includes(keyword.toLocaleLowerCase());
+          });
+        }
+        resolve(items);
+      });
+    })
+  }
+
+  scrollTop() {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 0);
+  }
+
+
+
+
+
 }

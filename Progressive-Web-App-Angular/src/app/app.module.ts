@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 //modulos
 import { RoutingModule } from './app.router';
@@ -7,6 +8,8 @@ import { RoutingModule } from './app.router';
 //Providers
 import { MenuService } from './providers/menu.service';
 import { ProductsService } from './providers/products.service';
+import { StorageService } from './providers/storage.service';
+import { CartService } from './providers/cart.service';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -40,9 +43,11 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
   ],
   imports: [
     BrowserModule,
-    RoutingModule
+    RoutingModule,
+    FormsModule
+
   ],
-  providers: [MenuService, ProductsService],
+  providers: [MenuService, ProductsService, StorageService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
